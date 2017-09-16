@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Are there any questions?",
+    "summary": "lorem ipsum dolor sit amet",
+    "date": 201701010000,
+    "venue": {
+      "name": "RailsConf",
+      "url": "https://railsconf.woo"
+    },
+    "speaker": {
+      "name": "Sandi Metz",
+      "url": "https://twitter.com/ssss"
+    },
+    "length": "55:55",
+    "url": "https://youtube.com/asdf"
+  }
+]
