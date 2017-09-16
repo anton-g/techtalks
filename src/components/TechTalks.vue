@@ -1,11 +1,8 @@
 <template lang='pug'>
   .talks
-    .columns
-      .column(v-for="talk in talks")
+    .columns.is-multiline
+      .column.is-narrow(v-for="talk in talks")
         tech-talk(:talk="talk")
-      .column
-      .column
-      .column
 </template>
 
 <script>
@@ -27,4 +24,7 @@ export default {
 </script>
 
 <style scoped>
+.column {
+  max-width: 324px;
+}
 </style>
