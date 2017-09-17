@@ -46,7 +46,8 @@ export default {
       const tags = talkData
                        .filter(t => t.tags !== undefined)
                        .filter(t => t.tags.length > 0)
-      return [].concat.apply([], tags.map(t => t.tags))
+      const flat = [].concat.apply([], tags.map(t => t.tags))
+      return Array.from(new Set(flat))
     }
   }
 }

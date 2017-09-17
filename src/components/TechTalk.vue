@@ -10,9 +10,11 @@
         a(:href="this.talk.speaker.url") {{ this.talk.speaker.name }}
         |  @ 
         a(:href="this.talk.venue.url") {{ this.talk.venue.name }}
-      talk-summary.summary(:summary="this.talk.summary", :length="150")
-      .tags
-        span.tag.is-dark(v-for="tag in this.talk.tags") {{ tag }}
+      talk-summary.summary(:summary="this.talk.summary", :length="150") }}
+    .card-footer
+      .card-footer-item
+        .tags
+          span.tag.is-dark(v-for="tag in this.talk.tags") {{ tag }}
 </template>
 
 <script>
@@ -32,30 +34,44 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.talk {
+.card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-}
-.card-content {
-  padding-top: 0.5rem;
 
-  .title {
-    span {
-      font-weight: normal;
-      font-size: 0.8em;
+  .card-content {
+    padding-top: 0.5rem;
+    padding-bottom: 0.2rem;
+
+    .title {
+      span {
+        font-weight: normal;
+        font-size: 0.8em;
+      }
+    }
+
+    small {
+      font-size: smaller;
+    }
+
+    .summary {
+      padding-top: 0.5rem;
+    }
+
+    .tags {
+      margin-top: 1rem;
+      max-width: 250px;
     }
   }
 
-  small {
-    font-size: smaller;
-  }
+  .card-footer {
+    margin-top: auto;
+    border-top: none;
 
-  .summary {
-    padding-top: 0.5rem;
-  }
-
-  .tags {
-    margin-top: 1rem;
-    max-width: 250px;
+    .card-footer-item {
+      padding: 0.25rem 1.5rem 1rem;
+      justify-content: flex-start;
+    }
   }
 }
 </style>
