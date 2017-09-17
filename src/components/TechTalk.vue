@@ -1,7 +1,7 @@
 <template lang="pug">
   .talk.card
     .card-image
-      iframe(:src="embedUrl", frameborder="0", allowfullscreen)
+      lazy-video(:url="this.talk.url")
     .card-content
       a(:href="this.talk.url")
         h2.title.is-6 {{ this.talk.title }} 
@@ -18,22 +18,17 @@
 
 <script>
 import TalkSummary from '@/components/TalkSummary'
+import LazyVideo from '@/components/LazyVideo'
 
 export default {
   name: 'techtalk',
   components: {
-    TalkSummary
+    TalkSummary,
+    LazyVideo
   },
   props: [
     'talk'
-  ],
-  computed: {
-    embedUrl () {
-      const url = new URL(this.talk.url)
-      const id = url.searchParams.get('v')
-      return `https://www.youtube.com/embed/${id}?rel=0&amp;showinfo=0`
-    }
-  }
+  ]
 }
 </script>
 

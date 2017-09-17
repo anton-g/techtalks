@@ -51,23 +51,26 @@ export default [
     'url': 'https://www.youtube.com/watch?v=LQHtOg46eOw',
     'tags': [
       'Postmortem',
-      'Games'
+      'Gamedev'
     ]
   },
   {
-    'title': 'Are there any questions?',
-    'summary': 'lorem ipsum dolor sit amet',
-    'date': 20170101,
+    'title': 'Scaling Yourself',
+    'summary': 'As information workers, we are asked to absorb even more information than ever before. More blogs, more documentation, more patterns, more layers of abstraction. Now Twitter and Facebook compete with Email and Texts for our attention, keeping us up-to-date on our friends dietary details and movie attendance second-by-second. Does all this information take a toll on your psyche or sharpen the saw? Is it a matter of finding the right tools and filters to capture what you need, or do you just need to unplug. Is ZEB (zero email bounce) a myth or are there substantive techniques for prioritizing your life on the web?',
+    'date': 2012,
     'venue': {
-      'name': 'RailsConf',
-      'url': 'https://railsconf.woo'
+      'name': 'GOTO Aarhus',
+      'url': 'http://gotocon.com'
     },
     'speaker': {
-      'name': 'Sandi Metz',
-      'url': 'https://twitter.com/ssss'
+      'name': 'Scott Hanselman',
+      'url': 'https://twitter.com/shanselman'
     },
     'duration': '55:55',
-    'url': 'https://www.youtube.com/watch?v=f__n8084YAE'
+    'url': 'https://www.youtube.com/watch?v=FS1mnISoG7U',
+    'tags': [
+      'Soft skills'
+    ]
   },
   {
     'title': 'Are there any questions?',
