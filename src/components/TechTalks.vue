@@ -1,6 +1,6 @@
 <template lang='pug'>
   .talks
-    .columns.is-multiline
+    .columns.is-multiline.is-centered.is-mobile
       .column.is-narrow(v-for="talk in talks")
         tech-talk(:talk="talk")
 </template>
