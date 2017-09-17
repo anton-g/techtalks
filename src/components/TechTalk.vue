@@ -11,14 +11,19 @@
         |  @ 
         a(:href="this.talk.venue.url") {{ this.talk.venue.name }}
         | , {{ this.talk.date }}
-      p {{ shortSummary }}
+      talk-summary.summary(:summary="this.talk.summary", :length="150")
       .tags
-        span.tag.is-light(v-for="tag in this.talk.tags") {{ tag }}
+        span.tag.is-dark(v-for="tag in this.talk.tags") {{ tag }}
 </template>
 
 <script>
+import TalkSummary from '@/components/TalkSummary'
+
 export default {
   name: 'techtalk',
+  components: {
+    TalkSummary
+  },
   props: [
     'talk'
   ],
@@ -27,15 +32,15 @@ export default {
       const url = new URL(this.talk.url)
       const id = url.searchParams.get('v')
       return `https://www.youtube.com/embed/${id}?rel=0&amp;showinfo=0`
-    },
-    shortSummary () {
-      return this.talk.summary.substring(0, 140) + (this.talk.summary.length > 141 ? '...' : '')
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+.talk {
+  height: 100%;
+}
 .card-content {
   padding-top: 0.5rem;
 
@@ -50,9 +55,8 @@ export default {
     font-size: smaller;
   }
 
-  p {
+  .summary {
     padding-top: 0.5rem;
-    font-size: 0.9rem;
   }
 
   .tags {
