@@ -1,5 +1,5 @@
 <template lang="pug">
-  .lazy-video
+  .lazy-video(:class="{ 'lazy': !loaded }")
     .placeholder(@click="loadVideo", v-if="!loaded")
       .play-button
       img(:src="thumbnailUrl")
@@ -43,7 +43,16 @@ export default {
   overflow: hidden;
   cursor: pointer;
   background-color: #000;
-  
+
+  &.lazy {
+    padding-top: 52%;    
+  }
+
+  img {
+    position: absolute;
+    top: -16.84%;
+  }
+
   .play-button {
     width: 90px;
     height: 60px;

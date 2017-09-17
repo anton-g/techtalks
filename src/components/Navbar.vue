@@ -39,6 +39,6 @@ export default {
 
 <style scoped lang="scss">
 .tags {
-  max-width: 100%;
+  max-width: 900px;
 }
 </style>

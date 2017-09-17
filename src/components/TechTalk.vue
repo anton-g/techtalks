@@ -10,7 +10,6 @@
         a(:href="this.talk.speaker.url") {{ this.talk.speaker.name }}
         |  @ 
         a(:href="this.talk.venue.url") {{ this.talk.venue.name }}
-        | , {{ this.talk.date }}
       talk-summary.summary(:summary="this.talk.summary", :length="150")
       .tags
         span.tag.is-dark(v-for="tag in this.talk.tags") {{ tag }}
