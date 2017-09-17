@@ -85,7 +85,8 @@ export default [
       'url': 'https://twitter.com/ssss'
     },
     'duration': '55:55',
-    'url': 'https://www.youtube.com/watch?v=f__n8084YAE'
+    'url': 'https://www.youtube.com/watch?v=f__n8084YAE',
+    'tags': []
   },
   {
     'title': 'Are there any questions?',
@@ -100,7 +101,8 @@ export default [
       'url': 'https://twitter.com/ssss'
     },
     'duration': '55:55',
-    'url': 'https://www.youtube.com/watch?v=f__n8084YAE'
+    'url': 'https://www.youtube.com/watch?v=f__n8084YAE',
+    'tags': []
   },
   {
     'title': 'Are there any questions?',
@@ -115,6 +117,7 @@ export default [
       'url': 'https://twitter.com/ssss'
     },
     'duration': '55:55',
-    'url': 'https://www.youtube.com/watch?v=f__n8084YAE'
+    'url': 'https://www.youtube.com/watch?v=f__n8084YAE',
+    'tags': []
   }
 ]

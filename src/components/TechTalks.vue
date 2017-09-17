@@ -8,18 +8,14 @@
 <script>
 import TechTalk from '@/components/TechTalk'
 
-import talks from '@/data/talks'
-
 export default {
   name: 'techtalks',
   components: {
     TechTalk
   },
-  computed: {
-    talks () {
-      return talks
-    }
-  }
+  props: [
+    'talks'
+  ]
 }
 </script>
 
