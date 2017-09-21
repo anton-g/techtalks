@@ -1,8 +1,17 @@
 <template lang="pug">
   nav.navbar.is-dark(role="navigation")
-    .navbar-brand
-      a.navbar-item(href="")
-        h1 TechTalks
+    .wrapper
+      .navbar-brand
+        a.navbar-item(href="")
+          h1 TechTalks
+      .navbar-item
+        .field
+          .control
+            input.input(placeholder="Search speaker")
+      .navbar-item
+        .field
+          .control
+            input.input(placeholder="Search venue")
     .navbar-item
       .tags
         a.tag(v-for="tag in tags", @click="toggleTagFilter(tag)", :class="{ 'is-primary': isSelected(tag) }") {{ tag }}
@@ -38,7 +47,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.navbar {
+    display: block;
+}
 .tags {
-  max-width: 900px;
+  display: inline-block;
+}
+
+@media screen and (min-width: 680px) {
+  .wrapper {
+    display: flex;
+    align-items: stretch;
+  }
 }
 </style>

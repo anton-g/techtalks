@@ -39,15 +39,14 @@ export default {
   },
   computed: {
     talks () {
-      const f = this.and ? Array.every : Array.some
-      return this.selectedTags.length > 0 ? talkData.filter(talk => f(this.selectedTags, tag => talk.tags.indexOf(tag) > -1)) : talkData
+      return this.selectedTags.length > 0 ? talkData.filter(talk => this.selectedTags.every(tag => talk.tags.indexOf(tag) > -1)) : talkData
     },
     tags () {
       const tags = talkData
                        .filter(t => t.tags !== undefined)
                        .filter(t => t.tags.length > 0)
       const flat = [].concat.apply([], tags.map(t => t.tags))
-      return Array.from(new Set(flat))
+      return [...new Set(flat)]
     }
   }
 }

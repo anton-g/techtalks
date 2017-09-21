@@ -102,7 +102,10 @@ export default [
     "url": "https://www.youtube.com/watch?v=_ahvzDzKdB0",
     "tags": [
       "Language design",
-      "Keynote"
+      "Keynote",
+      "Test",
+      "Test2",
+      "Test3"
     ]
   }
 ]
