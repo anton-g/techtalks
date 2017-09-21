@@ -7,11 +7,11 @@
       .navbar-item
         .field
           .control
-            input.input(placeholder="Search speaker")
+            input.input(placeholder="Filter speaker", v-model="speakerFilter", @input="updateSpeakerFilter")
       .navbar-item
         .field
           .control
-            input.input(placeholder="Search venue")
+            input.input(placeholder="Filter venue", v-model="venueFilter", @input="updateVenueFilter")
     .navbar-item
       .tags
         a.tag(v-for="tag in tags", @click="toggleTagFilter(tag)", :class="{ 'is-primary': isSelected(tag) }") {{ tag }}
@@ -25,7 +25,9 @@ export default {
   ],
   data () {
     return {
-      'selectedTags': []
+      'selectedTags': [],
+      'speakerFilter': '',
+      'venueFilter': ''
     }
   },
   methods: {
@@ -41,6 +43,12 @@ export default {
     },
     isSelected (tag) {
       return this.selectedTags.indexOf(tag) > -1
+    },
+    updateSpeakerFilter () {
+      this.$emit('updateSpeakerFilter', this.speakerFilter)
+    },
+    updateVenueFilter () {
+      this.$emit('updateVenueFilter', this.venueFilter)
     }
   }
 }

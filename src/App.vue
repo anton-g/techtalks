@@ -1,6 +1,9 @@
 <template lang="pug">
   #app
-    navbar(:tags="tags", @updateTagFilter="updateTagFilter")
+    navbar(:tags="tags",
+          @updateTagFilter="updateTagFilter",
+          @updateVenueFilter="updateVenueFilter",
+          @updateSpeakerFilter="updateSpeakerFilter")
     .container
       .section
         tech-talks(:talks="talks", v-if="!showUtil")
@@ -25,7 +28,8 @@ export default {
     return {
       'selectedTags': [],
       'showUtil': false,
-      'and': true
+      'venue': '',
+      'speaker': ''
     }
   },
   created () {
@@ -35,11 +39,20 @@ export default {
   methods: {
     updateTagFilter (tags) {
       this.selectedTags = tags
+    },
+    updateVenueFilter (venue) {
+      this.venue = venue
+    },
+    updateSpeakerFilter (speaker) {
+      this.speaker = speaker
     }
   },
   computed: {
     talks () {
-      return this.selectedTags.length > 0 ? talkData.filter(talk => this.selectedTags.every(tag => talk.tags.indexOf(tag) > -1)) : talkData
+      return talkData
+              .filter(t => this.selectedTags.length < 1 || this.selectedTags.every(tag => t.tags.indexOf(tag) > -1))
+              .filter(t => this.venue.length < 1 || t.venue.name.toLowerCase().indexOf(this.venue.toLowerCase()) > -1)
+              .filter(t => this.speaker.length < 1 || t.speaker.name.toLowerCase().indexOf(this.speaker.toLowerCase()) > -1)
     },
     tags () {
       const tags = talkData
